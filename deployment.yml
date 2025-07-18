@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kubec-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: kubepro
+  template:
+    metadata:
+      labels:
+        app: kubepro
+    spec:
+      containers:
+        - name: kubepro
+          image: harika0103/web12
+          ports:
+            - containerPort: 80
